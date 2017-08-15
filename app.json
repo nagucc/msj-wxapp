@@ -1,5 +1,7 @@
 {
   "pages": [
+    
+    "pages/store/list",
     "pages/index/index",
     "pages/logs/logs",
     "example/index",
@@ -30,10 +32,10 @@
     "example/tabbar/tabbar",
     "example/searchbar/searchbar"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }
