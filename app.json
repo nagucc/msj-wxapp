@@ -2,14 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/stat/stat",
-    "pages/acceptors/detail/detail",
-    "pages/acceptors/list/list",
-    "pages/acceptors/edit-record/edit-record",
-    "pages/acceptors/edit/edit",
-    "pages/user/profile/profile",
-    "pages/cee/list/list",
-    "pages/cee/registration/registration",
     "example/index",
     "example/button/button",
     "example/list/list",
@@ -36,9 +28,7 @@
     "example/toast/toast",
     "example/navbar/navbar",
     "example/tabbar/tabbar",
-    "example/searchbar/searchbar",
-    "pages/cee/detail/detail",
-    "pages/user/edit/edit"
+    "example/searchbar/searchbar"
   ],
   "window":{
     "backgroundTextStyle":"light",
