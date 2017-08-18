@@ -1,5 +1,6 @@
-const { jkefApiToken } = require('../../config');
+const { jkefApiToken, cos: { token } } = require('../../config');
 const CosCloud = require('../../lib/cos');
+const { getJsonAuthorization } = require('../../lib/cos-authorization');
 
 Page({
 
@@ -80,7 +81,9 @@ Page({
           bucket: 'nagucc', // bucketName 必填参数
           region: 'cd', // 地域信息 必填参数 华南地区填 gz 华东填 sh 华北填 tj
           getAppSign: function (callback) {//获取签名 必填参数
-
+            getJsonAuthorization({
+              token,
+            }, callback);
               // 下面简单讲一下获取签名的几种办法
               // 首先，签名的算法具体查看文档：[COS V4 API 签名算法](https://www.qcloud.com/document/product/436/6054)
 
@@ -97,7 +100,7 @@ Page({
                   }
               });
               */
-              callback('ec9YuJfM6AkyPqwQLnvLY8TiO29hPTEyNTIxNzkyMDUmYj1uYWd1Y2Mmaz1BS0lEc2dKang0SG9RM2F3QUNPZjlUZUt0SFRXTjRjenRBTU4mZT0xNTAzMzE3OTQ2JnQ9MTUwMzA1ODc0NiZyPTQ0NTUyMjImZj0=');
+              // callback('ec9YuJfM6AkyPqwQLnvLY8TiO29hPTEyNTIxNzkyMDUmYj1uYWd1Y2Mmaz1BS0lEc2dKang0SG9RM2F3QUNPZjlUZUt0SFRXTjRjenRBTU4mZT0xNTAzMzE3OTQ2JnQ9MTUwMzA1ODc0NiZyPTQ0NTUyMjImZj0=');
           },
           getAppSignOnce: function (callback) { //单次签名，必填参数，参考上面的注释即可
               // 填上获取单次签名的逻辑
