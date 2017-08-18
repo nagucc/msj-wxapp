@@ -1,6 +1,6 @@
 {
   "pages": [
-    
+    "pages/store/create",
     "pages/store/list",
     "pages/index/index",
     "pages/logs/logs",
@@ -9,11 +9,12 @@
     "example/list/list",
     "example/input/input",
     "example/slider/slider",
-    "example/uploader/uploader",
-    "example/article/article",
     "example/badge/badge",
+    "example/article/article",
+    
     "example/flex/flex",
     "example/footer/footer",
+    "example/uploader/uploader",
     "example/gallery/gallery",
     "example/grid/grid",
     "example/icons/icons",
@@ -31,6 +32,7 @@
     "example/navbar/navbar",
     "example/tabbar/tabbar",
     "example/searchbar/searchbar"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,64 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">店铺登记</view>
+        <view class="page__desc">
+        </view>
+    </view>
+  <view class="page__bd">
+    <form bindsubmit="formSubmit">
+      <view class="weui-cells__title">基本信息</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">名称</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" name="name" value="{{store.name}}" placeholder="名称"/>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="店铺简介" style="height: 3.3em" />
+                    <view class="weui-textarea-counter">0/200</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__hd">
+                            <view class="weui-uploader__title">图片上传</view>
+                            <view class="weui-uploader__info">{{storeImages.length}}/6</view>
+                        </view>
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for="{{storeImages}}" wx:key="*this">
+                                    <view wx:if="{{item.percent < 100}}" class="weui-uploader__file weui-uploader__file_status" bindtap="previewImage" id="{{item.localPath}}" style="position: relative;">
+                                        <image class="weui-uploader__img" src="{{item.localPath}}" mode="aspectFill" />
+                                        <view class="weui-uploader__file-content">{{item.percent}}%</view>
+                                    </view>
+                                    <view wx:else class="weui-uploader__file" bindtap="previewImage" id="{{item.localPath}}" style="position: relative;">
+                                        <image class="weui-uploader__img" src="{{item.localPath}}" mode="aspectFill" />
+                                        <view class="weui-badge" style="position: absolute;top: 0em;right: 0em;" id="{{index}}" bindtap="removeImage" >x</view>
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" form-type="submit">确定</button>
+    </view>
+    </form>
+    
+    <include src="../footer.wxml" />
+    </view>
+</view>
